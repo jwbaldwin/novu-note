@@ -1,1 +1,1 @@
-web: gunicorn neuro.wsgi
+web: python333 manage.py runserver 0.0.0.0:5000
