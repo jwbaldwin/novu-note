@@ -6,8 +6,8 @@ from . import views
 
 app_name = 'notes'
 urlpatterns = [
-    # ex: /polls/
+    # ex: /notes/
     path('', views.index, name='index'),
-    # ex: /polls/5/
+    # ex: /notes/5/
     path('<int:note_id>/', views.detail, name='detail'),
 ]
