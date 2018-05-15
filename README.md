@@ -14,13 +14,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Python 3.6.5
+Django 2.0.5
+PostgreSQL
+TensorFlow
+Keras
+HerokuCli
 
 ```
-Give examples
+$ brew install < >
 ```
 
 ### Installing
+//TODO: Flush these steps out
 
 A step by step series of examples that tell you have to get a development env running
 
@@ -60,25 +66,27 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Deployed using heroku's pipeline service in combination with its builtin CI test runner
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Django](https://www.djangoproject.com/) - The web framework
+* [Heroku](https://www.heroku.com/what) - The deployment platform and CI service
+* [Keras](https://keras.io/) - The neural net API
+* [TensorFlow](https://www.tensorflow.org/) - The machine learning framework
 
 ## Contributing
+ //TODO: Add CONTRIBUTING.md
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://gist.github.com/) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We don't use anything special for versioning. Will look into using tools later on in the development process.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **James Baldwin** (https://github.com/jwbaldwin)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -89,5 +97,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Inspiration from my frustrating brain
