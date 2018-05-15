@@ -1,0 +1,27 @@
+{
+  "name": "neuro-note",
+  "description": "A Django app that uses neural nets to change how you take notes",
+  "scripts": {
+  },
+  "env": {
+    "SECRET_KEY": {
+      "required": true
+    },
+    "DATABASE_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
