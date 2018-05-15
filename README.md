@@ -1,7 +1,7 @@
 [![Heroku CI Status](https://ci-badges.herokuapp.com/pipelines/216aae97-3b09-42e0-9b53-9d4b52cc436a/master.svg)](https://dashboard.heroku.com/pipelines/216aae97-3b09-42e0-9b53-9d4b52cc436a) 
-[![GitHub (pre-)release](https://img.shields.io/github/releases/jwbaldwin/neuro-note.svg)](https://github.com/jwbaldwin/neuro-note/releases)
-[![Code Climate](https://codeclimate.com/github/boennemann/badges.svg)](https://codeclimate.com/github/boennemann/badges) 
-[![codecov.io](https://codecov.io/github/boennemann/badges/coverage.svg?branch=master)](https://codecov.io/github/boennemann/badges?branch=master)
+[![GitHub release](https://img.shields.io/github/releases/jwbaldwin/neuro-note.svg)](https://github.com/jwbaldwin/neuro-note/releases)
+[![Code Climate](https://api.codeclimate.com/v1/badges/ee1fdd01649596943575/maintainability.svg)](https://codeclimate.com/github/jwbaldwin/badges) 
+[![codecov.io](https://codecov.io/github/jwbaldwin/badges/coverage.svg?branch=master)](https://codecov.io/github/jwbaldwin/badges?branch=master)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 # Neuro Note
