@@ -13,6 +13,7 @@ venv
 staticfiles
 .env
 db.sqlite3
+.DS_Store
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
