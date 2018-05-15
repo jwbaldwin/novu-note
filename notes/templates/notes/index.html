@@ -1,9 +1,30 @@
-{% if latest_notes_list %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Neuro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/css/uikit.almost-flat.min.css' %}" href="uikit.min.css" />
+    <script src="{% static 'notes/js/jquery.js' %}"></script>
+    <script src="{% static 'notes/js/uikit.min.js' %}"></script>
+    <h1>Here are the notes!</h1>
+</head>
+
+<body>
+    {% if latest_notes_list %}
     <ul>
-    {% for note in latest_notes_list %}
-        <li><a href="{% url 'notes:detail' note.id %}">{{ note.note_text }}</a></li>
-    {% endfor %}
+        {% for note in latest_notes_list %}
+        <li>
+            <a href="{% url 'notes:detail' note.id %}">{{ note.note_text }}</a>
+        </li>
+        {% endfor %}
     </ul>
-{% else %}
+    {% else %}
     <p>No notes are available.</p>
-{% endif %}
+    {% endif %}
+    <button class="uk-button uk-button-default">Button</button>
+</body>
+
+</html>
