@@ -1,16 +1,22 @@
-"""This module imports views to be used in the /notes namespace"""
+"""This module imports views to be used for the notes"""
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
+from django.views import generic
 
 from .models import Note
 
-def index(request):
-    """ The home page - shows last 5 notes """
-    latest_notes_list = Note.objects.order_by('-pub_date')[:5]
-    context = {'latest_notes_list': latest_notes_list}
-    return render(request, 'notes/index.html', context)
+class IndexView(generic.ListView):
+    """Generic index view"""
+    template_name = 'notes/index.html'
+    context_object_name = 'latest_notes_list'
+
+    def get_queryset(self):
+        """Return all published notes."""
+        return Note.objects.order_by('-pub_date')
 
 
-def detail(request, note_id):
-    """ Detailed view of a note """
-    note = get_object_or_404(Note, pk=note_id)
-    return render(request, 'notes/detail.html', {'note': note})
+class DetailView(generic.DetailView):
+    """Generic detail view"""
+    model = Note
+    template_name = 'notes/detail.html'
