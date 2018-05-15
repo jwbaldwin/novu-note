@@ -80,6 +80,23 @@ Deployed using heroku's pipeline service in combination with its builtin CI test
 
 Please read [CONTRIBUTING.md](https://gist.github.com/) for details on our code of conduct, and the process for submitting pull requests to us.
 
+Naming for brranches follows the conventions below. All branches are made from _dev_.
+
+```prefix/short-description-here```
+
+#### Prefix
+```
+wip       Works in progress; stuff I know won't be finished soon
+feat      Feature I'm adding or expanding
+bug       Bug fix or experiment
+junk      Throwaway branch created to experiment
+```
+
+##### Example:
+```
+$ git checkout -b feat/note-creation-panel
+```
+
 ## Versioning
 
 We don't use anything special for versioning. Will look into using tools later on in the development process.
