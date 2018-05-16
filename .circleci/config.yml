@@ -22,7 +22,7 @@ jobs:
             pip install pipenv
             pipenv install
       - save_cache: # special step to save dependency cache
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}-v1
           paths:
             - ".venv"
             - "/usr/local/bin"
@@ -30,6 +30,7 @@ jobs:
       - run: # run tests
           command: |
             echo "Running tests"
+            pipenv sync
             pipenv run python manage.py test
       - store_test_results: # special steps to store test results as artifacts
           path: test-results
