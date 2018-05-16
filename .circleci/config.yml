@@ -29,6 +29,17 @@ jobs:
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
   test:
+    working_directory: ~/neuro
+    docker:
+      - image: circleci/python:3.6.5
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
+          DATABASE_URL: postgresql://root:root@localhost/circle_test?sslmode=true
+      - image: nimbustech/postgres-ssl:9.5
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_PASS: root
+          POSTGRES_DB: circle_test
     steps:
       - run: # run tests
           command: |
