@@ -78,8 +78,14 @@ WSGI_APPLICATION = 'neuro.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-DATABASES = { 'default': dj_database_url.config(default=config('DATABASE_URL')) }
-
+DATABASES = {
+    'default': {
+        'NAME': 'neuro_db',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': config('DB_USERNAME'),
+        'PASSWORD': config('DB_PASSWORD'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
