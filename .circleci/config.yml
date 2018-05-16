@@ -46,12 +46,7 @@ jobs:
           command: |
             pipenv sync
             pipenv run python manage.py collectstatic
-            pipenv run python manage.py test &> notes-test-results/notes-test.log
-      - store_test_results: # special steps to store test results as artifacts
-          path: notes-test-results
-      - store_artifacts:
-          path: notes-test-results
-          destination: tr1
+            pipenv run python manage.py test
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
 workflows:
   version: 2
