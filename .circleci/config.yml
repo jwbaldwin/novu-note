@@ -6,10 +6,11 @@ jobs:
       - image: circleci/python:3.6.5
         environment:
           PIPENV_VENV_IN_PROJECT: true
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=allow
+          DATABASE_URL: postgresql://root:root@localhost/circle_test?sslmode=disable
       - image: circleci/postgres:10.4
         environment:
           POSTGRES_USER: root
+          POSTGRES_PASS: root
           POSTGRES_DB: circle_test
     steps:
       - checkout # special step to check out source code to the working directory
