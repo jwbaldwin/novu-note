@@ -18,16 +18,6 @@ jobs:
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-      - run: # install and activate virtual environment with pip
-          command: |
-            pip install pipenv
-            pipenv install
-      - save_cache: # special step to save dependency cache
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-          paths:
-            - ".venv"
-            - "/usr/local/bin"
-            - "/usr/local/lib/python3.6/site-packages"
   test:
     working_directory: ~/neuro
     docker:
@@ -41,6 +31,16 @@ jobs:
           POSTGRES_PASS: root
           POSTGRES_DB: circle_test
     steps:
+      - run: # install and activate virtual environment with pip
+          command: |
+            pip install pipenv
+            pipenv install
+      - save_cache: # special step to save dependency cache
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.6/site-packages"
       - run: # run tests
           command: |
             pipenv run python manage.py collectstatic
