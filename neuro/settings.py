@@ -84,6 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'USER': config('DB_USERNAME'),
         'PASSWORD': config('DB_PASSWORD'),
+        'SSLMODE': 'disable'
     }
 }
 print(DATABASES)
