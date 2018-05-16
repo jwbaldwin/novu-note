@@ -48,6 +48,11 @@ jobs:
             pipenv run python manage.py collectstatic
             pipenv run python manage.py test
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
+  deployment:
+    staging:
+      branch: master
+      heroku:
+        appname: neuro-note-stage-1
 workflows:
   version: 2
   build_and_test:
@@ -58,3 +63,6 @@ workflows:
           context: neuro-env
           requires:
             - build
+      - deployment:
+          requires:
+            - test
