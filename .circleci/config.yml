@@ -19,7 +19,7 @@ jobs:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run: # install and activate virtual environment with pip
           command: |
-            sudo pip install pipenv
+            pip install pipenv
             pipenv install
       - save_cache: # special step to save dependency cache
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
