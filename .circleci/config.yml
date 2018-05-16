@@ -1,40 +1,40 @@
 version: 2
-  jobs:
-    build:
-      context: neuro-env
-      working_directory: ~/neuro
-      docker:
-        - image: circleci/python:3.6.5
-          environment:
-            PIPENV_VENV_IN_PROJECT: true
-            DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
-        - image: circleci/postgres:10.4
-          environment:
-            POSTGRES_USER: root
-            POSTGRES_DB: circle_test
-      steps:
-        - checkout # special step to check out source code to the working directory
-        - run: sudo chown -R circleci:circleci /usr/local/bin
-        - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-        - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-        - run: # install and activate virtual environment with pip
-            command: |
-              sudo pip install pipenv
-              pipenv install
-        - save_cache: # special step to save dependency cache
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-            paths:
-              - ".venv"
-              - "/usr/local/bin"
-              - "/usr/local/lib/python3.6/site-packages"
-        - run: # run tests
-            command: |
-              pipenv run python manage.py test
-        - store_test_results: # special steps to store test results as artifacts
-            path: test-results
-        - store_artifacts:
-            path: test-results
-            destination: tr1
-        # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
-              
+jobs:
+  build:
+    context: neuro-env
+    working_directory: ~/neuro
+    docker:
+      - image: circleci/python:3.6.5
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
+          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+      - image: circleci/postgres:10.4
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle_test
+    steps:
+      - checkout # special step to check out source code to the working directory
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      - run: # install and activate virtual environment with pip
+          command: |
+            sudo pip install pipenv
+            pipenv install
+      - save_cache: # special step to save dependency cache
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.6/site-packages"
+      - run: # run tests
+          command: |
+            pipenv run python manage.py test
+      - store_test_results: # special steps to store test results as artifacts
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: tr1
+      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
+            
