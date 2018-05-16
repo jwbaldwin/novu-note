@@ -46,7 +46,7 @@ jobs:
           command: |
             pipenv sync
             pipenv run python manage.py collectstatic
-            pipenv run python manage.py test
+            pipenv run python manage.py test &> test-results/test.log
       - store_test_results: # special steps to store test results as artifacts
           path: test-results
       - store_artifacts:
