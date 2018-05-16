@@ -30,9 +30,8 @@ jobs:
       - run: # run tests
           command: |
             echo "Testing"
-            pipenv uninstall
-            pipenv sync
-            pipenv run python manage.py test
+            pipenv shell
+            python manage.py test
       - store_test_results: # special steps to store test results as artifacts
           path: test-results
       - store_artifacts:
