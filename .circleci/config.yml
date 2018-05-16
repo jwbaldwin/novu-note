@@ -31,6 +31,7 @@ jobs:
           POSTGRES_PASS: root
           POSTGRES_DB: circle_test
     steps:
+      - checkout # special step to check out source code to the working directory
       - run: # install and activate virtual environment with pip
           command: |
             pip install pipenv
