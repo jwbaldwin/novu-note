@@ -15,8 +15,8 @@ jobs:
       - checkout # special step to check out source code to the working directory
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-      - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      # - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
+      #     key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run: # install and activate virtual environment with pip
           command: |
             pip install pipenv
