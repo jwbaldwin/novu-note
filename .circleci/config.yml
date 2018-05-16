@@ -15,14 +15,14 @@ jobs:
       - checkout # special step to check out source code to the working directory
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-      # - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
-      #     key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run: # install and activate virtual environment with pip
           command: |
             pip install pipenv
             pipenv install
       - save_cache: # special step to save dependency cache
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}-v1
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
             - ".venv"
             - "/usr/local/bin"
@@ -38,9 +38,3 @@ jobs:
           path: test-results
           destination: tr1
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build:
-          context: neuro-env
