@@ -1,34 +1,34 @@
 version: 2
-  jobs:
-    build:
-      working_directory: ~/neuro
-      docker:
-        - image: circleci/python:3.6.5
-        - image: circleci/postgres:10.4
-      environment:
-        PIPENV_VENV_IN_PROJECT: true
-        POSTGRES_USER: jbaldwin
-        POSTGRES_DB: circle_test
-      steps:
-        - checkout # special step to check out source code to the working directory
-        - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-        - run: # install and activate virtual environment with pip
-            command: |
-              sudo pip install pipenv
-              pipenv install
-        - save_cache: # special step to save dependency cache
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-            paths:
-              - "venv"
-        - run: # run tests
-            command: |
-              pipenv shell
-              python manage.py test
+jobs:
+  build:
+    working_directory: ~/neuro
+    docker:
+      - image: circleci/python:3.6.5
+      - image: circleci/postgres:10.4
+    environment:
+      PIPENV_VENV_IN_PROJECT: true
+      POSTGRES_USER: jbaldwin
+      POSTGRES_DB: circle_test
+    steps:
+      - checkout # special step to check out source code to the working directory
+      - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      - run: # install and activate virtual environment with pip
+          command: |
+            sudo pip install pipenv
+            pipenv install
+      - save_cache: # special step to save dependency cache
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - "venv"
+      - run: # run tests
+          command: |
+            pipenv shell
+            python manage.py test
       - store_artifacts: # special step to store test reports as artifacts
-            path: test-reports/
-            destination: tr1
+          path: test-reports/
+          destination: tr1
       - store_test_results:
-            path: test-results
+          path: test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
             
