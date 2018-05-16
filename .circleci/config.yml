@@ -6,7 +6,7 @@ jobs:
       - image: circleci/python:3.6.5
         environment:
           PIPENV_VENV_IN_PROJECT: true
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=allow
       - image: circleci/postgres:10.4
         environment:
           POSTGRES_USER: root
@@ -29,9 +29,8 @@ jobs:
             - "/usr/local/lib/python3.6/site-packages"
       - run: # run tests
           command: |
-            echo "Testing"
-            pipenv shell
-            python manage.py test
+            echo "Running tests"
+            pipenv run python manage.py test
       - store_test_results: # special steps to store test results as artifacts
           path: test-results
       - store_artifacts:
