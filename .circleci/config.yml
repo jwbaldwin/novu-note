@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-    context: neuro-env
     working_directory: ~/neuro
     docker:
       - image: circleci/python:3.6.5
@@ -28,6 +27,18 @@ jobs:
             - ".venv"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
+  test:
+    docker:
+      - image: circleci/python:3.6.5
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
+          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+      - image: circleci/postgres:10.4
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle_test
+    steps:
+      - checkout
       - run: # run tests
           command: |
             pipenv run python manage.py test
@@ -37,4 +48,9 @@ jobs:
           path: test-results
           destination: tr1
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
-            
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
