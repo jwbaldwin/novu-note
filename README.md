@@ -1,7 +1,7 @@
-[![Heroku CI Status](https://ci-badges.herokuapp.com/pipelines/216aae97-3b09-42e0-9b53-9d4b52cc436a/master.svg)](https://dashboard.heroku.com/pipelines/216aae97-3b09-42e0-9b53-9d4b52cc436a) 
-[![GitHub release](https://img.shields.io/github/releases/jwbaldwin/neuro-note.svg)](https://github.com/jwbaldwin/neuro-note/releases)
-[![Code Climate](https://api.codeclimate.com/v1/badges/ee1fdd01649596943575/maintainability.svg)](https://codeclimate.com/github/jwbaldwin/badges) 
-[![codecov.io](https://codecov.io/github/jwbaldwin/badges/coverage.svg?branch=master)](https://codecov.io/github/jwbaldwin/badges?branch=master)
+
+[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)](https://circleci.com/gh/jwbaldwin)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ee1fdd01649596943575/maintainability)](https://codeclimate.com/github/jwbaldwin/neuro-note/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ee1fdd01649596943575/test_coverage)](https://codeclimate.com/github/jwbaldwin/neuro-note/test_coverage)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 # Neuro Note
@@ -79,6 +79,23 @@ Deployed using heroku's pipeline service in combination with its builtin CI test
  //TODO: Add CONTRIBUTING.md
 
 Please read [CONTRIBUTING.md](https://gist.github.com/) for details on our code of conduct, and the process for submitting pull requests to us.
+
+Naming for brranches follows the conventions below. All branches are made from _dev_.
+
+```prefix/short-description-here```
+
+#### Prefix
+```
+wip       Works in progress; stuff I know won't be finished soon
+feat      Feature I'm adding or expanding
+bug       Bug fix or experiment
+junk      Throwaway branch created to experiment
+```
+
+##### Example:
+```
+$ git checkout -b feat/note-creation-panel
+```
 
 ## Versioning
 
