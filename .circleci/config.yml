@@ -5,10 +5,10 @@ version: 2
       docker:
         - image: circleci/python:3.6.5
         - image: circleci/postgres:10.4
-        environment:
-          PIPENV_VENV_IN_PROJECT: true
-          POSTGRES_USER: jbaldwin
-          POSTGRES_DB: circle_test
+      environment:
+        PIPENV_VENV_IN_PROJECT: true
+        POSTGRES_USER: jbaldwin
+        POSTGRES_DB: circle_test
       steps:
         - checkout # special step to check out source code to the working directory
         - restore_cache: # restores saved dependency cache if the Branch key template or Pipfile.lock files have not changed since the previous run
