@@ -21,6 +21,7 @@ jobs:
       - run: # install and activate virtual environment with pip
           command: |
             pip install pipenv
+            pipenv install
       - save_cache: # special step to save dependency cache
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
@@ -43,7 +44,7 @@ jobs:
       - checkout # special step to check out source code to the working directory
       - run: # run tests
           command: |
-            pipenv install
+            pipenv sync
             pipenv run python manage.py collectstatic
             pipenv run python manage.py test
       - store_test_results: # special steps to store test results as artifacts
