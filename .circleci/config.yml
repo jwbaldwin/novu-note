@@ -7,7 +7,7 @@ jobs:
         environment:
           PIPENV_VENV_IN_PROJECT: true
           DATABASE_URL: postgresql://root:root@localhost/circle_test?sslmode=required
-      - image: circleci/postgres:10.4
+      - image: nimbustech/postgres-ssl:9.5
         environment:
           POSTGRES_USER: root
           POSTGRES_PASS: root
