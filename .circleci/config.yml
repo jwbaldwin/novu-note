@@ -28,6 +28,8 @@ jobs:
             - ".venv"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
+  test:
+    steps:
       - run: # run tests
           command: |
             pipenv run python manage.py collectstatic
@@ -44,3 +46,7 @@ workflows:
     jobs:
       - build:
           context: neuro-env
+      - test:
+          context: neuro-env
+          requires:
+            - build
