@@ -6,34 +6,6 @@ jobs:
       - image: circleci/python:3.6.5
         environment:
           PIPENV_VENV_IN_PROJECT: true
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
-      - image: circleci/postgres:10.4
-        environment:
-          POSTGRES_USER: root
-          POSTGRES_DB: circle_test
-    steps:
-      version: 2
-jobs:
-  build:
-    working_directory: ~/neuro
-    docker:
-      - image: circleci/python:3.6.5
-        environment:
-          PIPENV_VENV_IN_PROJECT: true
-          DATABASE_URL: postgresql://jbaldwin@localhost/circle_test?sslmode=disable
-      - image: circleci/postgres:10.4
-        environment:
-          POSTGRES_USER: jbaldwin
-          POSTGRES_DB: circle_test
-    steps:
-      version: 2
-jobs:
-  build:
-    working_directory: ~/neuro
-    docker:
-      - image: circleci/python:3.6.5
-        environment:
-          PIPENV_VENV_IN_PROJECT: true
           DATABASE_URL: postgresql://jbaldwin@localhost/circle_test?sslmode=disable
       - image: circleci/postgres:10.4
         environment:
