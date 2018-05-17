@@ -13,5 +13,8 @@ django = "*"
 gunicorn = "*"
 dj-database-url = "*"
 python-decouple = "*"
+djangorestframework = "*"
+django-filter = "*"
+markdown = "*"
 
 [dev-packages]
