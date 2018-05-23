@@ -3,6 +3,7 @@ from .permissions import IsCreator
 from .serializers import NoteSerializer
 from .models import Note
 
+
 class CreateView(generics.ListCreateAPIView):
     """This class defines the create behavior of our rest api."""
     queryset = Note.objects.all()
