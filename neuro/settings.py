@@ -28,8 +28,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SLACK ENVIRONMENT VARIABLES
-SLACK_CLIENT_ID = config('SLACK_CLIENT_ID')
-SLACK_CLIENT_SECRET = config('SLACK_CLIENT_SECRET')
+# SLACK_CLIENT_ID = config('SLACK_CLIENT_ID')
+# SLACK_CLIENT_SECRET = config('SLACK_CLIENT_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
