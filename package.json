@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)](https://circleci.com/gh/jwbaldwin) [![Maintainability](https://api.codeclimate.com/v1/badges/ee1fdd01649596943575/maintainability)](https://codeclimate.com/github/jwbaldwin/neuro-note/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/ee1fdd01649596943575/test_coverage)](https://codeclimate.com/github/jwbaldwin/neuro-note/test_coverage) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) # Neuro Note",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -11,9 +12,7 @@
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
-  },
-  "devDependencies": {
+    "react-dom": "^16.3.2",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4"
   },
