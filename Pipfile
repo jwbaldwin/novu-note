@@ -18,3 +18,4 @@ django-filter = "*"
 markdown = "*"
 
 [dev-packages]
+coverage = "*"
