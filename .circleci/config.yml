@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  setup:
     working_directory: ~/neuro
     docker:
       - image: circleci/python:3.6.5
@@ -55,20 +55,21 @@ jobs:
       - checkout # special step to check out source code to the working directory
       - run: # run tests
           command: |
-            npm install
-            npm test
+            cd frontend
+            pipenv run yarn install
+            pipenv run yarn test
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build:
+      - setup:
           context: neuro-env
       - django-tests:
           context: neuro-env
           requires:
-            - build
+            - setup
       - react-tests:
           context: neuro-env
           requires:
-            - build
+            - setup
