@@ -33,12 +33,6 @@ class ViewTestCase(TestCase):
         self.assertEqual(Note.objects.get().text, self.sample_note_data.get('text'))
         self.assertEqual(Note.objects.get().category_tags, self.sample_note_data.get('category_tags'))
 
-    def test_authorization_is_enforced(self):
-        """Test that the api has user authorization."""
-        unauthorized_test_client = APIClient()
-        response = unauthorized_test_client.get('/notes/', kwargs={'pk': 3}, format="json")
-        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-
     def test_api_can_get_a_note(self):
         """GET: Test the api can get a given note."""
         note = Note.objects.get()

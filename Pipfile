@@ -16,6 +16,7 @@ python-decouple = "*"
 djangorestframework = "*"
 django-filter = "*"
 markdown = "*"
+django-webpack-loader = "*"
 
 [dev-packages]
 coverage = "*"

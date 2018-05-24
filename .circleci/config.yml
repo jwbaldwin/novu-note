@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  setup:
     working_directory: ~/neuro
     docker:
       - image: circleci/python:3.6.5
@@ -28,7 +28,7 @@ jobs:
             - ".venv"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
-  test:
+  django-tests:
     working_directory: ~/neuro
     docker:
       - image: circleci/python:3.6.5
@@ -45,16 +45,28 @@ jobs:
       - run: # run tests
           command: |
             pipenv sync
-            pipenv run python manage.py collectstatic
             pipenv run python manage.py test
+  react-tests:
+    working_directory: ~/neuro
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout # special step to check out source code to the working directory
+      - run: # run tests
+          command: |
+            cd frontend && yarn install && yarn test
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build:
+      - setup:
           context: neuro-env
-      - test:
+      - django-tests:
           context: neuro-env
           requires:
-            - build
+            - setup
+      - react-tests:
+          context: neuro-env
+          requires:
+            - setup
