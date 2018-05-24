@@ -47,7 +47,7 @@ jobs:
             pipenv sync
             pipenv run python manage.py test
   react-tests:
-    working_directory: ~/neuro/frontend
+    working_directory: ~/neuro
     docker:
       - image: circleci/node
     steps:
