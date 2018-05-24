@@ -51,15 +51,11 @@ jobs:
     working_directory: ~/neuro/frontend
     docker:
       - image: circleci/node
-        environment:
-            PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout # special step to check out source code to the working directory
       - run: # run tests
           command: |
-            cd frontend
-            pipenv run yarn install
-            pipenv run yarn test
+            cd frontend && yarn install && yarn test
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
 workflows:
   version: 2
