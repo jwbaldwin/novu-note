@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
+
 import Note from "./components/Note";
 import NotFound from "./components/NotFound";
-import { createStore } from "redux";
-import ponyApp from "./reducers";
+import neuroApp from "./reducers";
 
-let store = createStore(ponyApp);
+
+let store = createStore(neuroApp, applyMiddleware(thunk));
 
 class App extends Component {
   render() {
   return (
-    <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Note} />
-      <Route component={NotFound} />
-    </Switch>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Note} />
+        <Route component={NotFound} />
+      </Switch>
+      </BrowserRouter>
+    </Provider>
   );
   }
 }
