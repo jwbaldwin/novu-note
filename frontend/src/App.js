@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
 import Note from "./components/Note";
 import NotFound from "./components/NotFound";
+import { createStore } from "redux";
+import ponyApp from "./reducers";
+
+let store = createStore(ponyApp);
 
 class App extends Component {
   render() {
