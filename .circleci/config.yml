@@ -45,7 +45,6 @@ jobs:
       - run: # run tests
           command: |
             pipenv sync
-            pipenv run python manage.py collectstatic
             pipenv run python manage.py test
   react-tests:
     working_directory: ~/neuro/frontend
