@@ -55,8 +55,8 @@ jobs:
       - checkout # special step to check out source code to the working directory
       - run: # run tests
           command: |
-            yarn install
-            yarn test
+            npm install
+            npm test
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
 workflows:
   version: 2
@@ -71,4 +71,4 @@ workflows:
       - react-tests:
           context: neuro-env
           requires:
-            - django-tests
+            - build
