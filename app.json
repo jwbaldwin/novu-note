@@ -9,7 +9,13 @@
     },
     "DATABASE_URL": {
       "required": true
-    }
+    },
+    "DB_USERNAME": {
+        "required": true
+    },
+    "DB_PASSWORD": {
+      "required": true
+  }
   },
   "formation": {
     "web": {
