@@ -12,6 +12,28 @@ An application for slack that combines productivity with creativity using neural
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+------------------
+#### DEVELOPMENT
+in /frontend
+```
+yarn run
+```
+in root
+```
+python manage.py runserver
+```
+
+--------------
+#### PRODUCTION
+in /frontend
+```
+yarn build
+```
+in root
+```
+python manage.py runserver --settings=neuro.production_settings
+```
+
 ### Prerequisites
 
 Python 3.6.5
@@ -47,6 +69,16 @@ End with an example of getting some data out of the system or using it for a lit
 ## Running the tests
 
 Explain how to run the automated tests for this system
+
+Frontend:
+```
+yarn test
+```
+
+Backend:
+```
+python manage.py test
+```
 
 ### Break down into end to end tests
 
