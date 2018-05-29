@@ -17,6 +17,7 @@ djangorestframework = "*"
 django-filter = "*"
 markdown = "*"
 django-webpack-loader = "*"
+whitenoise = "*"
 
 [dev-packages]
 coverage = "*"
