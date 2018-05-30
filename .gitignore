@@ -10,11 +10,11 @@
 *.sln.docstates
 venv
 *.pyc
-staticfiles
 .env
 db.sqlite3
 .DS_Store
 htmlcov/
+build/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
