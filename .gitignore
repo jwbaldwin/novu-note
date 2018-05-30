@@ -14,7 +14,7 @@ venv
 db.sqlite3
 .DS_Store
 htmlcov/
-build/
+build/*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
