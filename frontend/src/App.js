@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import {Route, Switch, BrowserRouter} from 'react-router-dom';
-import Note from "./components/Note";
-import NotFound from "./components/NotFound";
-import { createStore } from "redux";
-import ponyApp from "./reducers";
-
-let store = createStore(ponyApp);
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
   render() {
-  return (
-    <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Note} />
-      <Route component={NotFound} />
-    </Switch>
-    </BrowserRouter>
-  );
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to Bobbie</h1>
+        </header>
+        <p className="App-intro">
+            A react app with django as a backend.
+        </p>
+      </div>
+    );
   }
 }
 

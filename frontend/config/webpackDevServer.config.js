@@ -73,7 +73,6 @@ module.exports = function(proxy, allowedHost) {
     // Enable HTTPS if the HTTPS environment variable is set to 'true'
     https: protocol === 'https',
     host: host,
-    // CORS enables
     headers: {
       'Access-Control-Allow-Origin': '*'
     },

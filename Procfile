@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn neuro.wsgi
+web: DJANGO_SETTINGS_MODULE=neuro.production_settings gunicorn neuro.wsgi
