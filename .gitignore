@@ -15,7 +15,6 @@ staticfiles
 db.sqlite3
 .DS_Store
 htmlcov/
-staticfiles/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
