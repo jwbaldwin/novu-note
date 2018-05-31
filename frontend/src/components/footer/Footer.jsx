@@ -6,7 +6,9 @@ class Footer extends Component {
             <footer className="sticky-footer">
                 <div className="container">
                     <div className="text-center">
-                        <small>Copyright © Your Website 2018</small>
+                        <i href="" class="fab fa-fw fa-facebook"></i>
+                        <i href="" class="fab fa-fw fa-twitter"></i>
+                        <i href="" class="fab fa-fw fa-github-alt"></i>
                     </div>
                 </div>
             </footer>
