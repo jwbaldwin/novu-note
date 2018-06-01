@@ -4,9 +4,11 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ee1fdd01649596943575/test_coverage)](https://codeclimate.com/github/jwbaldwin/neuro-note/test_coverage)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
-# Neuro Note
+# Novu Note
 
 An application for slack that combines productivity with creativity using neural networks to help you write less, think better, and do more.
+
+Visit the site at: www.novunote.com
 
 ## Getting Started
 

@@ -5,7 +5,7 @@ from .views import CreateView, DetailsView, UserCreate
 urlpatterns = {
     path('notes/', CreateView.as_view(), name="create"),
     path('notes/<int:pk>', DetailsView.as_view(), name="details"),
-    path('users/', UserCreate.as_view(), name='account-create')
+    path('login/', UserCreate.as_view(), name='account-create')
 }
 
 urlpatterns = format_suffix_patterns(urlpatterns)
