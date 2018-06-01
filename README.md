@@ -8,6 +8,8 @@
 
 An application for slack that combines productivity with creativity using neural networks to help you write less, think better, and do more.
 
+Visit the site at: www.novunote.com
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
