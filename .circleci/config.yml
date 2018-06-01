@@ -61,12 +61,12 @@ workflows:
   build_and_test:
     jobs:
       - setup:
-          context: neuro-env
+          context: novu-env
       - django-tests:
-          context: neuro-env
+          context: novu-env
           requires:
             - setup
       - react-tests:
-          context: neuro-env
+          context: novu-env
           requires:
             - setup
