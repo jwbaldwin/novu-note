@@ -1,6 +1,6 @@
 from .settings import *
 
-DEBUG = True
+DEBUG = False
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "build"),
