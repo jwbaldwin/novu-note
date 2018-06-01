@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import './Navbar.css';
 
 class Navbar extends Component {
     render() {
         return (
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item dropdown">
+                {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fa fa-fw fa-envelope"></i>
                         <span className="d-lg-none">Messages
-              <span className="badge badge-pill badge-primary">12 New</span>
+                            <span className="badge badge-pill badge-primary">12 New</span>
                         </span>
                         <span className="indicator text-primary d-none d-lg-block">
                             <i className="fa fa-fw fa-circle"></i>
@@ -25,12 +26,12 @@ class Navbar extends Component {
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item small" >View all messages</a>
                     </div>
-                </li>
-                <li className="nav-item dropdown">
+                </li> */}
+                {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fa fa-fw fa-bell"></i>
                         <span className="d-lg-none">Alerts
-              <span className="badge badge-pill badge-warning">6 New</span>
+                            <span className="badge badge-pill badge-warning">6 New</span>
                         </span>
                         <span className="indicator text-warning d-none d-lg-block">
                             <i className="fa fa-fw fa-circle"></i>
@@ -50,8 +51,8 @@ class Navbar extends Component {
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item small" >View all alerts</a>
                     </div>
-                </li>
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                     <form className="form-inline my-2 my-lg-0 mr-lg-2">
                         <div className="input-group">
                             <input className="form-control" type="text" placeholder="Search for..." />
@@ -62,7 +63,7 @@ class Navbar extends Component {
                             </span>
                         </div>
                     </form>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <a className="nav-link" data-toggle="modal" data-target="#exampleModal">
                         <i className="fa fa-fw fa-sign-out-alt"></i>Logout</a>

@@ -1,0 +1,18 @@
+.container {
+    padding: 4em;
+    margin-top: 10vh;
+    height: 40vh;
+    width: 40vw;
+    text-align: center;
+    background-color: #fff;
+}
+
+input.form-control {
+    padding: 1em 1em;
+    margin: 1.5em 0;
+}
+
+.btn {
+    padding: 0.75em 0.75em;
+    margin: 1em 0;
+}

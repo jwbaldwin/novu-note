@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Sidebar.css';
 
 class Sidebar extends Component {
 
@@ -18,26 +19,6 @@ class Sidebar extends Component {
                             <span className="nav-link-text">Charts</span>
                         </a>
                     </li>
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                        <a className="nav-link" href="tables.html">
-                            <i className="fas fa-fw fa-table"></i>
-                            <span className="nav-link-text">Tables</span>
-                        </a>
-                    </li>
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                        <a className="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                            <i className="fas fa-fw fa-wrench"></i>
-                            <span className="nav-link-text">Components</span>
-                        </a>
-                        <ul className="sidenav-second-level collapse" id="collapseComponents">
-                            <li>
-                                <a href="navbar.html">Navbar</a>
-                            </li>
-                            <li>
-                                <a href="cards.html">Cards</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                         <a className="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                             <i className="fas fa-fw fa-file"></i>
@@ -55,37 +36,6 @@ class Sidebar extends Component {
                             </li>
                             <li>
                                 <a href="blank.html">Blank Page</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-                        <a className="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                            <i className="fa fa-fw fa-sitemap"></i>
-                            <span className="nav-link-text">Menu Levels</span>
-                        </a>
-                        <ul className="sidenav-second-level collapse" id="collapseMulti">
-                            <li>
-                                <a>Second Level Item</a>
-                            </li>
-                            <li>
-                                <a>Second Level Item</a>
-                            </li>
-                            <li>
-                                <a>Second Level Item</a>
-                            </li>
-                            <li>
-                                <a className="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-                                <ul className="sidenav-third-level collapse" id="collapseMulti2">
-                                    <li>
-                                        <a>Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a>Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a>Third Level Item</a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </li>
