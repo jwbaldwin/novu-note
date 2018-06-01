@@ -9,8 +9,8 @@ export default class Main extends Component {
         return (
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route exact path='/login' component={Login}/>
-                <Route exact path='/register' component={Register}/>
+                <Route path='/login' component={Login}/>
+                <Route path='/register' component={Register}/>
             </Switch>
         );
     }
