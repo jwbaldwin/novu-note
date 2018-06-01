@@ -1,8 +1,8 @@
 .container {
-    padding: 4em;
-    margin-top: 10vh;
-    height: 40vh;
-    width: 40vw;
+    padding: 3em;
+    margin-top: 10%;
+    height: 50%;
+    width: 40%;
     text-align: center;
     border-radius: 8px;
     background-color: #fff;
@@ -17,4 +17,9 @@ input.form-control {
 .btn {
     padding: 0.75em 0.75em;
     margin: 1em 0;
+}
+
+.logo>img {
+    height: 15%;
+    width: 15%;
 }
