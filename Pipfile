@@ -18,6 +18,9 @@ django-filter = "*"
 markdown = "*"
 django-webpack-loader = "*"
 whitenoise = "*"
+django-rest-auth = "*"
+djangorestframework-jwt = "*"
+django-allauth = "*"
 
 [dev-packages]
 coverage = "*"

@@ -3,6 +3,14 @@ import ColorLogo from '../../images/color-logo@3x.png';
 import './Login.css';
 
 export default class Login extends Component {
+    // constructor() {
+    //     super();
+    // }
+
+    handleSubmit = () => {
+        this.props.history.push('/')
+    }
+
     render() {
         return (
             <div className="container">
