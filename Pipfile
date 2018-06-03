@@ -21,6 +21,7 @@ whitenoise = "*"
 django-rest-auth = "*"
 djangorestframework-jwt = "*"
 django-allauth = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 coverage = "*"
