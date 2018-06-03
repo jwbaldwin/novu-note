@@ -8,9 +8,10 @@ export default class Register extends Component {
         super(props);
     
         this.state = {
-          email: "",
+          username: "",
           password: "",
-          token: ""
+          passwordConfirmation: "",
+          email: ""
         };
       }
 
