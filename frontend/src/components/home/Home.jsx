@@ -1,34 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Home.css';
 import Header from '../header/Header';
 import Note from '../note/Note';
 import NoteForm from '../note/noteForm/NoteForm';
 import { connect } from 'react-redux';
 import { fetchNotes } from '../../actions/noteActions';
-
-class LocalStorageMock {
-    constructor() {
-      this.store = {};
-    }
-  
-    clear() {
-      this.store = {};
-    }
-  
-    getItem(key) {
-      return this.store[key] || null;
-    }
-  
-    setItem(key, value) {
-      this.store[key] = value.toString();
-    }
-  
-    removeItem(key) {
-      delete this.store[key];
-    }
-  };
-  
-  global.localStorage = new LocalStorageMock;
 
 class Home extends Component {
     componentWillMount() {
@@ -48,7 +25,7 @@ class Home extends Component {
                 <div className="content-wrapper">
                     <div className="container-fluid">
                         <h1>Notes</h1>
-                        {Notes}
+                        <div className="card-columns">{Notes}</div>
                     </div>
                 </div>
                 <NoteForm />

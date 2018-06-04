@@ -16,12 +16,8 @@ body.sticky-footer {
   margin-bottom: 5%;
 }
 
-body.sticky-footer .content-wrapper {
-  min-height: calc(100vh - 5% - 5%);
-}
-
 body.fixed-nav {
-  padding-top: 5%;
+  padding-top: 4%;
 }
 
 /* Icon Fixed-Width */
@@ -29,11 +25,6 @@ body.fixed-nav {
 .fa-fw {
   text-align: center !important;
   width: 2em !important;
-}
-
-.content-wrapper {
-  min-height: calc(100vh - 56px);
-  padding-top: 1rem;
 }
 
 .smaller {
@@ -273,17 +264,6 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   transform: scaleX(-1);
   filter: FlipH;
   -ms-filter: 'FlipH';
-}
-
-.content-wrapper {
-  overflow-x: hidden;
-  background: white;
-}
-
-@media (min-width: 768px) {
-  .content-wrapper {
-    margin-left: 250px;
-  }
 }
 
 #sidenavToggler i {
