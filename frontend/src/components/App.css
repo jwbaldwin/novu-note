@@ -135,7 +135,7 @@ body.fixed-nav {
   text-overflow: ellipsis;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #mainNav .navbar-brand {
     width: 250px;
     color: #fff;
@@ -198,7 +198,7 @@ body.fixed-nav {
   display: none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #mainNav.fixed-top .navbar-sidenav {
     height: calc(100vh - 10%);
   }
@@ -260,7 +260,7 @@ body.sidenav-toggled #mainNav.fixed-top #sidenavToggler i {
   display: none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #mainNav.static-top .sidenav-toggler {
     display: flex;
   }
@@ -280,7 +280,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   background: white;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .content-wrapper {
     margin-left: 250px;
   }
@@ -294,7 +294,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   display: none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   body.sidenav-toggled .content-wrapper {
     margin-left: 55px;
   }
@@ -354,7 +354,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   color: #adb5bd;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
     background: #343a40;
   }
@@ -400,7 +400,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   color: rgba(0, 0, 0, 0.5);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav {
     background: #f8f9fa;
   }
@@ -427,13 +427,13 @@ footer.sticky-footer {
   line-height: 55px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   footer.sticky-footer {
     width: calc(100% - 250px);
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   body.sidenav-toggled footer.sticky-footer {
     width: calc(100% - 55px);
   }

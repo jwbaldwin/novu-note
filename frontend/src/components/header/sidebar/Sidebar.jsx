@@ -39,13 +39,9 @@ class Sidebar extends Component {
                             </li>
                         </ul>
                     </li>
-                </ul>
-                <ul className="navbar-nav sidenav-toggler">
-                    <li className="nav-item">
-                        <a className="nav-link text-center" id="sidenavToggler">
-                            <i className="fa fa-fw fa-angle-left"></i>
-                        </a>
-                    </li>
+                    <a className="nav-link text-center" id="sidenavToggler">
+                        <i className="fa fa-fw fa-3x fa-angle-left"></i>
+                    </a>
                 </ul>
             </div>
         );

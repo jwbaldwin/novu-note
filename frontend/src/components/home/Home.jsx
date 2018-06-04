@@ -1,42 +1,45 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Header from '../header/Header';
+import Note from '../note/Note';
+import NoteForm from '../note/noteForm/NoteForm';
+import { connect } from 'react-redux';
+import { fetchNotes } from '../../actions/noteActions';
 
-export default class Home extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            notes:[]
-        };
+class Home extends Component {
+    componentWillMount() {
+        if (localStorage.getItem('token')) {
+            this.props.fetchNotes();
+        }
     }
 
-    componentDidMount() {
-        // const headers = new Headers();
-
-        // headers.append('Content-Type', 'application/json');
-        // headers.append('Authorization', "JWT " + localStorage.getItem('token'));
-
-        // fetch('http://localhost:8000/api/notes/', {
-        //     method: 'GET',
-        //     headers: headers,
-        // })
-        // .then( response => response.json())
-        // .then( data => { this.setState({ notes: data }) }
-        // );
-    }
-    
     render() {
+
+        const Notes = this.props.notes.map( note => 
+            <Note key={note.id} text={note.text} category_tags={note.category_tags}></Note> )
+
         return (
             <div>
                 <Header />
                 <div className="content-wrapper">
                     <div className="container-fluid">
-                        <h1>Home</h1>
-                        <hr />
-                        {/* {this.state.notes.map((note, i) => <div key={i}> {note.text}, {note.creator}, {note.category_tags}, {note.id}</div>)} */}
+                        <h1>Notes</h1>
+                        {Notes}
                     </div>
                 </div>
+                <NoteForm />
             </div>
         );
     }
 }
+
+Home.propTypes = {
+    fetchNotes: PropTypes.func.isRequired,
+    notes: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => ({
+    notes: state.notes.items
+})
+
+export default connect(mapStateToProps, { fetchNotes })(Home);

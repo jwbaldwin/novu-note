@@ -1,1 +1,5 @@
-
+#sidenavToggler {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+}
