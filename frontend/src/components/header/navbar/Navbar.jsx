@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -65,8 +66,9 @@ class Navbar extends Component {
                     </form>
                 </li> */}
                 <li className="nav-item">
-                    <a className="nav-link" data-toggle="modal" data-target="#exampleModal">
-                        <i className="fa fa-fw fa-sign-out-alt"></i>Logout</a>
+                    <Link className="nav-link" to='/login' >
+                        <i className="fa fa-fw fa-sign-in-alt"></i>Login
+                    </Link>
                 </li>
             </ul>
         );

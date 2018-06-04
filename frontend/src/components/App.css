@@ -190,9 +190,9 @@ body.fixed-nav {
     max-width: 300px;
   }
 }
-nav#mainNav, .navbar-sidenav {
+/* nav#mainNav, .navbar-sidenav {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
+} */
 
 #mainNav.fixed-top .sidenav-toggler {
   display: none;
