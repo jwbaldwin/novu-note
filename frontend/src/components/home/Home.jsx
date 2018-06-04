@@ -6,6 +6,30 @@ import NoteForm from '../note/noteForm/NoteForm';
 import { connect } from 'react-redux';
 import { fetchNotes } from '../../actions/noteActions';
 
+class LocalStorageMock {
+    constructor() {
+      this.store = {};
+    }
+  
+    clear() {
+      this.store = {};
+    }
+  
+    getItem(key) {
+      return this.store[key] || null;
+    }
+  
+    setItem(key, value) {
+      this.store[key] = value.toString();
+    }
+  
+    removeItem(key) {
+      delete this.store[key];
+    }
+  };
+  
+  global.localStorage = new LocalStorageMock;
+
 class Home extends Component {
     componentWillMount() {
         if (localStorage.getItem('token')) {
