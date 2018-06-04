@@ -47,6 +47,7 @@ export default class Login extends Component {
         .then(response => response.json())
         .then(responseData => {
             localStorage.setItem('token', responseData['token']);
+            
             this.props.history.push('/');
         })
         .catch(error => console.log(error));
