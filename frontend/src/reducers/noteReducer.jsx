@@ -14,7 +14,7 @@ export default function (state = initialState, action) {
         case ADD_NOTE:
             return { 
                 ...state,
-                items: [...state.arr, action.payload]
+                items: [ ...state.items, action.payload ]
             };
         default:
             return state;
