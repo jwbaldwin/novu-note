@@ -1,4 +1,6 @@
-import {FETCH_NOTES, ADD_NOTE} from './types';
+import {FETCH_NOTES, ADD_NOTE, UPDATE_NOTE, DELETE_NOTE} from './types';
+
+const URL = 'http://localhost:8000';
 
 export const fetchNotes = () => dispatch => {
     const headers = new Headers();
@@ -6,7 +8,7 @@ export const fetchNotes = () => dispatch => {
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', "JWT " + localStorage.getItem('token'));
 
-    fetch('http://localhost:8000/api/notes/', {
+    fetch(`${URL}/api/notes/`, {
             method: 'GET',
             headers: headers
         })
@@ -25,7 +27,7 @@ export const addNote = (noteData) => dispatch => {
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', "JWT " + localStorage.getItem('token'));
 
-    fetch('http://localhost:8000/api/notes/', {
+    fetch(`${URL}/api/notes/`, {
             method: 'POST',
             headers: headers,
             body: JSON.stringify(noteData)

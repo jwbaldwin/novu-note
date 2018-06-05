@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ColorLogo from '../../images/color-logo@3x.png';
 import './Login.css';
-import { handleErrors } from '../../services/auth';
 import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
@@ -29,28 +28,16 @@ export default class Login extends Component {
         event.preventDefault()
 
 
-        let userData = {
+        let userCreds = {
             "username": this.state.username,
             "password": this.state.password
         }
 
-        fetch('http://localhost:8000/rest-auth/login/', {
-            method: 'POST',
-            body: JSON.stringify(userData),
-            mode: 'cors',
-            redirect: 'follow',
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
-        })
-        .then(handleErrors)
-        .then(response => response.json())
-        .then(responseData => {
-            localStorage.setItem('token', responseData['token']);
+        // login call
+
+            // localStorage.setItem('token', responseData['token']);
             
-            this.props.history.push('/');
-        })
-        .catch(error => console.log(error));
+            // this.props.history.push('/');
     }
 
     render() {
