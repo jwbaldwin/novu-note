@@ -23,7 +23,7 @@ class Home extends Component {
             if( !this.props.auth.isLoggedIn ){
             return (
             <div>
-                <Header />
+                <Header auth={this.props.auth}/>
                 <div className="content-wrapper">
                     <div className="container-fluid">
                     <h6><Link to='/login'><strong>Login</strong></Link> or <Link to='/register'><strong>Sign up!</strong></Link></h6>
@@ -35,7 +35,7 @@ class Home extends Component {
 
         return (
             <div>
-                <Header />
+                <Header auth={this.props.auth} />
                 <div className="content-wrapper">
                     <div className="container-fluid">
                         <h1>Notes</h1>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProfileLink from './profileLink/ProfileLink';
 import { Link } from "react-router-dom";
 import './Navbar.css';
 
@@ -65,11 +66,7 @@ class Navbar extends Component {
                         </div>
                     </form>
                 </li> */}
-                <li className="nav-item">
-                    <Link className="nav-link" to='/login' >
-                        <i className="fa fa-fw fa-sign-in-alt"></i>Login
-                    </Link>
-                </li>
+                <ProfileLink auth={this.props.auth} />
             </ul>
         );
     }
