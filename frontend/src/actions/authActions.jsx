@@ -13,7 +13,7 @@ const URL = 'http://localhost:8000';
 export const loginRequest = (userCreds) => dispatch => {
 
     dispatch({ type: LOGIN_REQUEST })
-    fetch(`${URL}/rest-auth/login/`, {
+    return fetch(`${URL}/rest-auth/login/`, {
         method: 'POST',
         body: JSON.stringify(userCreds),
         mode: 'cors',

@@ -22,7 +22,7 @@ export const fetchNotes = () => dispatch => {
     headers.append('Authorization', "JWT " + localStorage.getItem('token'));
 
     dispatch({ type: FETCH_NOTES })
-    fetch(`${URL}/api/notes/`, {
+    return fetch(`${URL}/api/notes/`, {
         method: 'GET',
         headers: headers
     })
@@ -49,7 +49,7 @@ export const addNote = (noteData) => dispatch => {
     headers.append('Authorization', "JWT " + localStorage.getItem('token'));
 
     dispatch({ type: ADD_NOTE })
-    fetch(`${URL}/api/notes/`, {
+    return fetch(`${URL}/api/notes/`, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(noteData)
