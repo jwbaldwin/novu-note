@@ -14,7 +14,7 @@ class Header extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
-                        <Navbar />
+                        <Navbar auth={this.props.auth}/>
                         <Sidebar />
                     </div>
                 </nav>

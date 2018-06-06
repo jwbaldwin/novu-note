@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 class Sidebar extends Component {
@@ -26,26 +27,16 @@ class Sidebar extends Component {
                         </a>
                         <ul className="sidenav-second-level collapse" id="collapseExamplePages">
                             <li>
-                                <a href="login.html">Login Page</a>
+                                <Link to='/login'>Login</Link>
                             </li>
                             <li>
-                                <a href="register.html">Registration Page</a>
-                            </li>
-                            <li>
-                                <a href="forgot-password.html">Forgot Password Page</a>
-                            </li>
-                            <li>
-                                <a href="blank.html">Blank Page</a>
+                                <Link to='/register'>Register</Link>
                             </li>
                         </ul>
                     </li>
-                </ul>
-                <ul className="navbar-nav sidenav-toggler">
-                    <li className="nav-item">
-                        <a className="nav-link text-center" id="sidenavToggler">
-                            <i className="fa fa-fw fa-angle-left"></i>
-                        </a>
-                    </li>
+                    <a className="nav-link text-center" id="sidenavToggler">
+                        <i className="fa fa-fw fa-3x fa-angle-left"></i>
+                    </a>
                 </ul>
             </div>
         );
