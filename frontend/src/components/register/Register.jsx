@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ColorLogo from '../../images/color-logo@3x.png';
 import './Register.css';
-// import { handleErrors, getCookie } from '../../services/auth';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { registerRequest } from '../../actions/authActions';
 
-export default class Register extends Component {
+class Register extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            username: "",
-            password: "",
-            passwordConfirmation: "",
-            email: ""
+            username: '',
+            password: '',
+            passwordConfirmation: '',
+            email: ''
         };
-    }
-
-    validateForm() {
-        return this.state.email.length > 0 && this.state.password.length > 0;
     }
 
     handleChange = event => {
@@ -27,33 +25,22 @@ export default class Register extends Component {
     }
 
     handleSubmit = event => {
-        // event.preventDefault()
-        // const csrftoken = getCookie('csrftoken');
+        event.preventDefault()
 
-        // let userData = {
-        //     "username": this.state.username,
-        //     "password1": this.state.password,
-        //     "password2": this.state.passwordConfirmation,
-        //     "email": this.state.email
-        // }
+        let userCreds = {
+            "username": this.state.username,
+            "password1": this.state.password,
+            "password2": this.state.passwordConfirmation,
+            "email": this.state.email
+        }
 
-        // fetch('http://localhost:8000/rest-auth/registration/', {
-        //     method: 'POST',
-        //     body: JSON.stringify(userData),
-        //     mode: 'cors',
-        //     redirect: 'follow',
-        //     headers: new Headers({
-        //         'Content-Type': 'application/json',
-        //         'X-CSRFToken': csrftoken
-        //     })
-        // })
-        //     .then(handleErrors)
-        //     .then(response => response.json())
-        //     .then(responseData => {
-        //         localStorage.setItem('token', responseData['token']);
-        //         this.props.history.push('/');
-        //     })
-        //     .catch(error => console.log(error));
+        this.props.registerRequest(userCreds);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.isLoggedIn){
+            this.props.history.push('/')
+        }
     }
 
     render() {
@@ -77,10 +64,23 @@ export default class Register extends Component {
                     <input type="password" className="form-control" id="passwordConfirmation" placeholder="Confirm Password" autoComplete="current-password"
                         value={this.state.passwordConfirmation} onChange={this.handleChange} />
 
-                    <button className="btn btn-lg btn-success btn-block" type="submit" disabled={!this.validateForm()}>Sign Up</button>
+                    <button className="btn btn-lg btn-success btn-block" type="submit" disabled={this.props.isLoading}>Sign Up</button>
                 </form>
                 <p className="text-center sign-up">Already have an account? <Link to='/login'><strong>Login!</strong></Link></p>
             </div>
         );
     }
 }
+
+Register.propTypes = {
+    registerRequest: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    isLoggedIn: PropTypes.bool.isRequired
+}
+
+const mapStateToProps = state => ({
+    isLoading: state.auth.isLoading,
+    isLoggedIn: state.auth.isLoggedIn
+})
+
+export default connect(mapStateToProps, { registerRequest })(Register);

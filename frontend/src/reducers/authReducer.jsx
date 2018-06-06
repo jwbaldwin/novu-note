@@ -17,13 +17,13 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case LOGIN_REQUEST:
-            return { 
+            return {
                 ...state,
                 isLoading: true
             }
         case LOGIN_REQUEST_SUCCESS:
             localStorage.setItem('token', action.payload.token)
-            return { 
+            return {
                 ...state,
                 isLoading: false,
                 isLoggedIn: true,
@@ -31,22 +31,26 @@ export default function (state = initialState, action) {
                 user: action.payload.user
             }
         case LOGIN_REQUEST_ERROR:
-            return { 
+            return {
                 ...state,
                 isLoading: false
             }
         case REGISTER_REQUEST:
-            return { 
+            return {
                 ...state,
                 isLoading: true
             }
         case REGISTER_REQUEST_SUCCESS:
-            return { 
+            localStorage.setItem('token', action.payload.token)
+            return {
                 ...state,
-                isLoading: false
+                isLoading: false,
+                isLoggedIn: true,
+                token: action.payload.token,
+                user: action.payload.user
             }
         case REGISTER_REQUEST_ERROR:
-            return { 
+            return {
                 ...state,
                 isLoading: false
             }

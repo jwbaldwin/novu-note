@@ -56,19 +56,19 @@ describe('authReducer: registering user', () => {
         })
     })
 
-    // it('should handle REGISTER_REQUEST_SUCCESS by changing isLoading to false and populating state', () => {
-    //     expect(reducer(undefined,
-    //         {
-    //             type: types.REGISTER_REQUEST_SUCCESS,
-    //             payload: {token: 'SUPERSECURETESTTOKEN', user: {first: 'billy', last: 'bob'}}
-    //         })).toEqual({
-    //             ...initialMockState,
-    //             isLoading: false,
-    //             isLoggedIn: true,
-    //             token: 'SUPERSECURETESTTOKEN',
-    //             user: {first: 'billy', last: 'bob'}
-    //         })
-    // })
+    it('should handle REGISTER_REQUEST_SUCCESS by changing isLoading to false and populating state', () => {
+        expect(reducer(undefined,
+            {
+                type: types.REGISTER_REQUEST_SUCCESS,
+                payload: {token: 'SUPERSECURETESTTOKEN', user: {first: 'billy', last: 'bob'}}
+            })).toEqual({
+                ...initialMockState,
+                isLoading: false,
+                isLoggedIn: true,
+                token: 'SUPERSECURETESTTOKEN',
+                user: {first: 'billy', last: 'bob'}
+            })
+    })
 
     it('should handle REGISTER_REQUEST_ERROR by changing isLoading to true', () => {
         expect(reducer(undefined, { type: types.REGISTER_REQUEST_ERROR })).toEqual({
