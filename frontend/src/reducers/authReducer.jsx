@@ -1,19 +1,55 @@
 import {
     LOGIN_REQUEST,
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE,
+    LOGIN_REQUEST_SUCCESS,
+    LOGIN_REQUEST_ERROR,
     REGISTER_REQUEST,
-    REGISTER_SUCCESS,
-    REGISTER_FAILURE
+    REGISTER_REQUEST_SUCCESS,
+    REGISTER_REQUEST_ERROR
 } from '../actions/types';
 
 const initialState = {
-    isFetching: false,
-    isAuthenticated: localStorage.getItem('token') ? true : false
+    isLoading: false,
+    isLoggedIn: false,
+    token: localStorage.getItem('token'),
+    user: null
 }
 
 export default function (state = initialState, action) {
-    switch(action.type) {
+    switch (action.type) {
+        case LOGIN_REQUEST:
+            return { 
+                ...state,
+                isLoading: true
+            }
+        case LOGIN_REQUEST_SUCCESS:
+            localStorage.setItem('token', action.payload.token)
+            return { 
+                ...state,
+                isLoading: false,
+                isLoggedIn: true,
+                token: action.payload.token,
+                user: action.payload.user
+            }
+        case LOGIN_REQUEST_ERROR:
+            return { 
+                ...state,
+                isLoading: false
+            }
+        case REGISTER_REQUEST:
+            return { 
+                ...state,
+                isLoading: true
+            }
+        case REGISTER_REQUEST_SUCCESS:
+            return { 
+                ...state,
+                isLoading: false
+            }
+        case REGISTER_REQUEST_ERROR:
+            return { 
+                ...state,
+                isLoading: false
+            }
         default:
             return state;
     }

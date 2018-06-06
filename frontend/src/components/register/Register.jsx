@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ColorLogo from '../../images/color-logo@3x.png';
 import './Register.css';
-import { handleErrors, getCookie } from '../../services/auth';
+// import { handleErrors, getCookie } from '../../services/auth';
 import { Link } from 'react-router-dom';
 
 export default class Register extends Component {
@@ -27,33 +27,33 @@ export default class Register extends Component {
     }
 
     handleSubmit = event => {
-        event.preventDefault()
-        const csrftoken = getCookie('csrftoken');
+        // event.preventDefault()
+        // const csrftoken = getCookie('csrftoken');
 
-        let userData = {
-            "username": this.state.username,
-            "password1": this.state.password,
-            "password2": this.state.passwordConfirmation,
-            "email": this.state.email
-        }
+        // let userData = {
+        //     "username": this.state.username,
+        //     "password1": this.state.password,
+        //     "password2": this.state.passwordConfirmation,
+        //     "email": this.state.email
+        // }
 
-        fetch('http://localhost:8000/rest-auth/registration/', {
-            method: 'POST',
-            body: JSON.stringify(userData),
-            mode: 'cors',
-            redirect: 'follow',
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrftoken
-            })
-        })
-            .then(handleErrors)
-            .then(response => response.json())
-            .then(responseData => {
-                localStorage.setItem('token', responseData['token']);
-                this.props.history.push('/');
-            })
-            .catch(error => console.log(error));
+        // fetch('http://localhost:8000/rest-auth/registration/', {
+        //     method: 'POST',
+        //     body: JSON.stringify(userData),
+        //     mode: 'cors',
+        //     redirect: 'follow',
+        //     headers: new Headers({
+        //         'Content-Type': 'application/json',
+        //         'X-CSRFToken': csrftoken
+        //     })
+        // })
+        //     .then(handleErrors)
+        //     .then(response => response.json())
+        //     .then(responseData => {
+        //         localStorage.setItem('token', responseData['token']);
+        //         this.props.history.push('/');
+        //     })
+        //     .catch(error => console.log(error));
     }
 
     render() {

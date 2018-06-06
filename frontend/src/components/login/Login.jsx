@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ColorLogo from '../../images/color-logo@3x.png';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginRequest } from '../../actions/authActions';
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
     
         this.state = {
             isLoggedIn: false,
-            username: "",
-            password: ""
+            username: '',
+            password: ''
         };
       }
 
@@ -33,14 +36,14 @@ export default class Login extends Component {
             "password": this.state.password
         }
 
-        // login call
-
-            // localStorage.setItem('token', responseData['token']);
-            
-            // this.props.history.push('/');
+        this.props.loginRequest(userCreds);
     }
 
     render() {
+        if(this.props.isLoggedIn) {
+            return <Redirect to='/'></Redirect>
+        }
+
         return (
             <div className="container">
                 <form className="form-signin" onSubmit={this.handleSubmit}>
@@ -55,10 +58,23 @@ export default class Login extends Component {
                     <input type="password" className="form-control" id="password" placeholder="Password" autoComplete="on" 
                         value={this.state.password} onChange={this.handleChange} />
 
-                    <button className="btn btn-lg btn-success btn-block" type="submit" disabled={!this.validateForm()}>Log in</button>
+                    <button className="btn btn-lg btn-success btn-block" type="submit" disabled={!this.validateForm() || this.props.isLoading}>Log in</button>
                 </form>
                 <p className="text-center sign-up">Don't have an account? <Link to='/register'><strong>Sign up!</strong></Link></p>
             </div>
         );
     }
 }
+
+Login.propTypes = {
+    loginRequest: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    isLoggedIn: PropTypes.bool.isRequired
+}
+
+const mapStateToProps = state => ({
+    isLoading: state.auth.isLoading,
+    isLoggedIn: state.auth.isLoggedIn
+})
+
+export default connect(mapStateToProps, { loginRequest })(Login);
