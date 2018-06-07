@@ -8,7 +8,7 @@ import {
 } from './types';
 import { getCookie } from '../services/auth';
 
-const URL = 'http://localhost:8000';
+const URL = process.env.REACT_APP_API_URL;
 const csrftoken = getCookie('csrftoken');
 
 export const loginRequest = (userCreds) => dispatch => {

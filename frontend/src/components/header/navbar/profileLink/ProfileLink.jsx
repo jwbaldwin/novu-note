@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default class ProfileLink extends Component {
     render() {
-        console.log(this.props)
         if (!this.props.auth.isLoggedIn) {
             return (
                 <li className="nav-item">
