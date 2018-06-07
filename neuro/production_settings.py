@@ -1,6 +1,6 @@
 from .settings import *
 
-DEBUG = True
+DEBUG = False
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "build"),
@@ -8,7 +8,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-ALLOWED_HOSTS = ['www.novunote.com', 'https://novunote.herokuapp.com/', 'https://novunote-stage.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['www.novunote.com', 'https://novunote.herokuapp.com/', 'https://novunote-stage.herokuapp.com/', 'https://novunote-stage-pr-*.herokuapp.com/', '127.0.0.1']
 
 WEBPACK_LOADER = {
     'DEFAULT': {
