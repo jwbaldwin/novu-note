@@ -8,6 +8,8 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+ALLOWED_HOSTS = ['www.novunote.com', '.herokuapp.com', '127.0.0.1']
+
 WEBPACK_LOADER = {
     'DEFAULT': {
             'BUNDLE_DIR_NAME': 'bundles/',

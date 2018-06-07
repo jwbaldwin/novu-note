@@ -16,11 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.generic import TemplateView
+from rest_framework_jwt.views import refresh_jwt_token
 
 
 urlpatterns = [
-    path('api-auth/', include('rest_framework.urls')),
+    # urls for rest-auth and allauth - login, logout, refresh token, registration
+    path('rest-auth/', include('rest_auth.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path('refresh-token/', refresh_jwt_token),
+    # admin panel
     path('admin/', admin.site.urls),
+    # all api calls
     path('api/', include('api.urls')),
+    # react attach point
     re_path('', TemplateView.as_view(template_name="index.html")),
 ]
