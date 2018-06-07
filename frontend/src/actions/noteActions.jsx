@@ -13,7 +13,7 @@ import {
     DELETE_NOTE_ERROR
 } from './types';
 
-const URL = 'http://localhost:8000';
+const URL = process.env.REACT_APP_API_URL;
 
 export const fetchNotes = () => dispatch => {
     const headers = new Headers();

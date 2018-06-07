@@ -6,14 +6,14 @@ import fetchMock from 'fetch-mock';
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
-const URL = 'http://localhost:8000';
+const URL = process.env.REACT_APP_API_URL;
 
 describe('noteActions', () => {
     afterEach(() => {
         fetchMock.reset()
         fetchMock.restore()
     })
-
+    
     it('creates FETCH_NOTES_SUCCESS when fetching notes has been done', () => {
         fetchMock.getOnce(`${URL}/api/notes/`, {
                 items: [{text: 'testing something', category_tags:['django']}]
