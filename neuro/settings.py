@@ -29,8 +29,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SLACK ENVIRONMENT VARIABLES
-# SLACK_CLIENT_ID = config('SLACK_CLIENT_ID')
-# SLACK_CLIENT_SECRET = config('SLACK_CLIENT_SECRET')
+SLACK_CLIENT_ID = config('SLACK_CLIENT_ID')
+SLACK_CLIENT_SECRET = config('SLACK_CLIENT_SECRET')
+SLACK_VERIFICATION_TOKEN = config('SLACK_VERIFICATION_TOKEN')
+SLACK_OAUTH_ACCESS_TOKEN = config('SLACK_OAUTH_ACCESS_TOKEN')
+SLACK_BOT_OAUTH_ACCESS_TOKEN = config('SLACK_BOT_OAUTH_ACCESS_TOKEN')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -57,6 +60,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_auth.registration',
+    'slackeventsapi',
 
     'webpack_loader',
     'corsheaders',
@@ -136,6 +140,7 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_USE_JWT = True
 
 CORS_ORIGIN_ALLOW_ALL = True
+CSRF_COOKIE_SECURE = False
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

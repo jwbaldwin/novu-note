@@ -22,6 +22,8 @@ django-rest-auth = "*"
 djangorestframework-jwt = "*"
 django-allauth = "*"
 django-cors-headers = "*"
+slackclient = "*"
+slackeventsapi = "*"
 
 [dev-packages]
 coverage = "*"
