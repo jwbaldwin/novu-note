@@ -1,7 +1,7 @@
 
 .content-wrapper {
-    min-height: calc(100vh - 75px);
-    padding-top: 1rem;
+    min-height: calc(100vh);
+    padding: 80px 15px;
     border-top-left-radius: 5px;
   }
 
@@ -14,12 +14,13 @@
     column-count: 1;
 }
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .content-wrapper {
-      margin-left: 250px;
+        padding: 50px 15px;
+        margin-left: 250px;
     }
 
     .card-columns {
         column-count: 3;
     }
-  }
+}

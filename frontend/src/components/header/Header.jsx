@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Header.css';
 import Sidebar from './sidebar/Sidebar';
 import Navbar from './navbar/Navbar';
 import ColorLogo from '../../images/color-logo@3x.png';
@@ -8,7 +9,7 @@ class Header extends Component {
         return (
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
                     <a className="navbar-brand">
-                        <img src={ColorLogo} alt="logo" width="12%" height="10%" />
+                        <img src={ColorLogo} alt="logo" id="navbar-logo" />
                     </a>
                     <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
