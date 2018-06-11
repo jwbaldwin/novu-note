@@ -1,0 +1,25 @@
+#mainNav {
+    padding: 10px;
+    height: 70px;
+}
+
+#navbar-logo {
+    width: 15%;
+    height: 15%;
+}
+
+a.navbar-brand {
+    width: 75%;
+}
+
+@media (min-width: 768px) {
+    #mainNav {
+        padding: 0;
+        height: 70px;
+    }
+
+    #navbar-logo {
+        width: 25%;
+        height: 25%;
+    }
+}
