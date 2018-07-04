@@ -1,0 +1,114 @@
+{
+  "help": {
+    "text": "I am bobbie! And I am here to help you stay in the flow! :robot_face: \n Simply tell me what you want to remember and I'll help you resume your flow when you get back!",
+    "attachments": [{
+        "color": "#a64f36",
+        "title": "@bobbie stop",
+        "text": "Then tell Bobbie what you were working on and he'll remind you when you're ready!"
+      },
+      {
+        "color": "#36a64f",
+        "title": "@bobbie flow",
+        "text": "Bobbie will aid you in re-entering flow by reminding you of what you were working on! Yay, productivity!"
+      }
+    ]
+  },
+  "hi": "Howdy <@{}> :wave:",
+  "stop": {
+    "text": "What're you working on?",
+    "attachments": [{
+      "fallback": "You are unable to choose an option :cry:",
+      "callback_id": "flow_type",
+      "color": "#36a64f",
+      "actions": [{
+        "name": "option_writing",
+        "text": ":keyboard: Writing",
+        "type": "button",
+        "value": "writing"
+      }, {
+        "name": "option_debugging",
+        "text": ":beetle: Debugging",
+        "type": "button",
+        "value": "debugging"
+      }, {
+        "name": "option_researching",
+        "text": ":mag: Researching",
+        "type": "button",
+        "value": "researching"
+      }]
+    }]
+  },
+  "stop_dialog_writing": {
+    "title": "Save your flow",
+    "submit_label": "Save",
+    "callback_id": "{}flow_save_form",
+    "elements": [{
+        "label": "What are you writing",
+        "name": "description",
+        "type": "text",
+        "placeholder": "Implementing new game type - working on rules now"
+      },
+      {
+        "label": "Stuff to remember",
+        "name": "items",
+        "type": "textarea",
+        "placeholder": "* Implement nukes and subs \n* Game should affect DEFCON status"
+      },
+      {
+        "label": "Location",
+        "type": "text",
+        "name": "location",
+        "placeholder": "wopr.py"
+      }
+    ]
+  },
+  "stop_dialog_debugging": {
+    "title": "Save your flow",
+    "submit_label": "Save",
+    "callback_id": "{}flow_save_form",
+    "elements": [{
+        "label": "Describe the error",
+        "name": "description",
+        "type": "text",
+        "placeholder": "Fixing issue with Joshua's game tactics"
+      },
+      {
+        "label": "Paste the error log",
+        "name": "items",
+        "type": "textarea",
+        "placeholder": "\"Sorry, We could not find www.WOPRvsFalken.com\""
+      },
+      {
+        "label": "Locaiton Details",
+        "type": "text",
+        "name": "location",
+        "placeholder": "PlayGame() - line 1337"
+      }
+    ]
+  },
+  "stop_dialog_researching": {
+    "title": "Save your flow",
+    "submit_label": "Save",
+    "callback_id": "{}flow_save_form",
+    "elements": [{
+        "label": "Describe the research",
+        "name": "description",
+        "type": "text",
+        "placeholder": "Trying to find documentation for tic-tac-toe strategy"
+      },
+      {
+        "label": "Sites currently reading",
+        "name": "items",
+        "type": "text",
+        "subtype": "url",
+        "placeholder": "https://stackoverflow.com/search?q=WOPR"
+      },
+      {
+        "label": "Thoughts",
+        "type": "text",
+        "name": "location",
+        "placeholder": "Maybe try playing?"
+      }
+    ]
+  }
+}

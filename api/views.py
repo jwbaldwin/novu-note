@@ -9,14 +9,19 @@ from .models import Note
 from .bot import Bot
 
 
-class Slack(APIView):
+class Events(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, *args, **kwargs):
         return Bot().handleMessage(request.data)
 
-# Notes
+class Message_Actions(APIView):
+    permission_classes = (permissions.AllowAny,)
 
+    def post(self, request, *args, **kwargs):
+        return Bot().handleAction(request.data)
+
+# Notes
 class CreateView(generics.ListCreateAPIView):
     """This class defines the create behavior of our rest api."""
     queryset = Note.objects.all()
