@@ -1,19 +1,22 @@
 {
   "help": {
-    "text": "I am bobbie! And I am here to help you stay in the flow! :robot_face: \n Simply tell me what you want to remember and I'll help you resume your flow when you get back!",
+    "text": "I am Bobbie! And I am here to help you stay in the flow! :robot_face: \n Simply tell me what you want to remember and I'll help you resume your flow when you get back!",
     "attachments": [{
         "color": "#a64f36",
-        "title": "@bobbie stop",
+        "title": "@Bobbie stop",
         "text": "Then tell Bobbie what you were working on and he'll remind you when you're ready!"
       },
       {
         "color": "#36a64f",
-        "title": "@bobbie flow",
+        "title": "@Bobbie flow",
         "text": "Bobbie will aid you in re-entering flow by reminding you of what you were working on! Yay, productivity!"
       }
     ]
   },
-  "hi": "Howdy <@{}> :wave:",
+  "hi": {
+    "text": "Howdy <@{}> :wave:",
+    "attachments": []
+  },
   "stop": {
     "text": "What're you working on?",
     "attachments": [{
@@ -44,20 +47,20 @@
     "callback_id": "{}flow_save_form",
     "elements": [{
         "label": "What are you writing",
-        "name": "description",
+        "name": "short_description",
         "type": "text",
         "placeholder": "Implementing new game type - working on rules now"
       },
       {
         "label": "Stuff to remember",
-        "name": "items",
+        "name": "extra_info",
         "type": "textarea",
-        "placeholder": "* Implement nukes and subs \n* Game should affect DEFCON status"
+        "placeholder": "• Implement nukes and subs \n• Game should affect DEFCON status"
       },
       {
         "label": "Location",
+        "name": "location_info",
         "type": "text",
-        "name": "location",
         "placeholder": "wopr.py"
       }
     ]
@@ -68,20 +71,20 @@
     "callback_id": "{}flow_save_form",
     "elements": [{
         "label": "Describe the error",
-        "name": "description",
+        "name": "short_description",
         "type": "text",
         "placeholder": "Fixing issue with Joshua's game tactics"
       },
       {
         "label": "Paste the error log",
-        "name": "items",
+        "name": "extra_info",
         "type": "textarea",
         "placeholder": "\"Sorry, We could not find www.WOPRvsFalken.com\""
       },
       {
         "label": "Locaiton Details",
+        "name": "location_info",
         "type": "text",
-        "name": "location",
         "placeholder": "PlayGame() - line 1337"
       }
     ]
@@ -92,22 +95,133 @@
     "callback_id": "{}flow_save_form",
     "elements": [{
         "label": "Describe the research",
-        "name": "description",
+        "name": "short_description",
         "type": "text",
         "placeholder": "Trying to find documentation for tic-tac-toe strategy"
       },
       {
-        "label": "Sites currently reading",
-        "name": "items",
+        "label": "Site you are reading",
+        "name": "resource_info",
         "type": "text",
         "subtype": "url",
         "placeholder": "https://stackoverflow.com/search?q=WOPR"
       },
       {
         "label": "Thoughts",
+        "name": "location_info",
         "type": "text",
-        "name": "location",
         "placeholder": "Maybe try playing?"
+      }
+    ]
+  },
+  "flow_writing": {
+    "text": ":ocean: *Flow*",
+    "attachments": [{
+      "callback_id": "returned_flow_action",
+      "color": "#26A671",
+      "pretext": "Here's what you were doing:",
+      "author_name": ":keyboard: Writing\n",
+      "title": "{}",
+      "text": ":spiral_note_pad: *Your notes*\n ```{}```",
+      "fields": [{
+        "title": ":mag_right: Your files & locations",
+        "value": "```{}```",
+        "short": false
+      }],
+      "actions": [{
+        "name": "finished",
+        "text": "Mark as done!",
+        "type": "button",
+        "style": "primary",
+        "value": "finished"
+      }, {
+        "name": "save",
+        "text": "Save for later!",
+        "type": "button",
+        "value": "save"
+      }],
+      "footer": "NovuNote",
+      "footer_icon": "{}",
+      "ts": "{}"
+    }]
+  },
+  "flow_debugging": {
+    "text": ":ocean: *Flow*",
+    "attachments": [{
+      "color": "#26A671",
+      "pretext": "Here's what you were doing:",
+      "author_name": ":beetle: Debugging\n",
+      "title": "{}",
+      "text": ":spiral_note_pad: *Your notes*\n ```{}```",
+      "fields": [{
+        "title": ":mag_right: Your files & locations",
+        "value": "```{}```",
+        "short": false
+      }],
+      "footer": "NovuNote",
+      "footer_icon": "{}",
+      "ts": "{}"
+    }]
+  },
+  "flow_researching": {
+    "text": ":ocean: *Flow*",
+    "attachments": [{
+      "color": "#26A671",
+      "pretext": "Here's what you were doing:",
+      "author_name": ":mag: Researching\n",
+      "title": "{}",
+      "text": ":spiral_note_pad: *Your notes*\n ```{}```",
+      "fields": [{
+        "title": ":mag_right: Your files & locations",
+        "value": "```{}```",
+        "short": false
+      }],
+      "footer": "NovuNote",
+      "footer_icon": "{}",
+      "ts": "{}"
+    }]
+  },
+  "flow_inactive": {
+    "text": ":old_key: *Old Flow*",
+    "attachments": [{
+      "color": "#26A671",
+      "pretext": "Want to mark this as active?",
+      "author_name": ":mag: {NAME OF STATE TYPE HERE}\n",
+      "title": "{}",
+      "text": ":spiral_note_pad: *Your notes*\n ```{}```",
+      "fields": [{
+        "title": ":mag_right: Your files & locations",
+        "value": "```{}```",
+        "short": false
+      }],
+      "actions": [{
+        "name": "activate",
+        "text": "Activate",
+        "type": "button",
+        "style": "primary",
+        "value": "activate"
+      }, {
+        "name": "No thanks",
+        "text": "Save for later!",
+        "type": "button",
+        "value": "no"
+      }],
+      "footer": "NovuNote",
+      "footer_icon": "{}",
+      "ts": "{}"
+    }]
+  },
+  "error": {
+    "text": ":interrobang: Oops! I'm not sure I recognize that command! Maybe try one of these?",
+    "attachments": [{
+        "color": "#a64f36",
+        "title": "@Bobbie stop",
+        "text": "Then tell Bobbie what you were working on and he'll remind you when you're ready!"
+      },
+      {
+        "color": "#36a64f",
+        "title": "@Bobbie flow",
+        "text": "Bobbie will aid you in re-entering flow by reminding you of what you were working on! Yay, productivity!"
       }
     ]
   }
