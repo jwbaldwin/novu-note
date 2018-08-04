@@ -15,6 +15,8 @@
   },
   "hi": {
     "text": "Howdy <@{}> :wave:",
+    "unfurl_media":true,
+    "unfurl_links":true,
     "attachments": []
   },
   "stop": {
@@ -108,8 +110,8 @@
       },
       {
         "label": "Thoughts",
-        "name": "location_info",
-        "type": "text",
+        "name": "extra_info",
+        "type": "textarea",
         "placeholder": "Maybe try playing?"
       }
     ]
@@ -148,6 +150,7 @@
   "flow_debugging": {
     "text": ":ocean: *Flow*",
     "attachments": [{
+      "callback_id": "returned_flow_action",
       "color": "#26A671",
       "pretext": "Here's what you were doing:",
       "author_name": ":beetle: Debugging\n",
@@ -158,6 +161,18 @@
         "value": "```{}```",
         "short": false
       }],
+      "actions": [{
+        "name": "finished",
+        "text": "Mark as done!",
+        "type": "button",
+        "style": "primary",
+        "value": "finished"
+      }, {
+        "name": "save",
+        "text": "Save for later!",
+        "type": "button",
+        "value": "save"
+      }],
       "footer": "NovuNote",
       "footer_icon": "{}",
       "ts": "{}"
@@ -166,15 +181,28 @@
   "flow_researching": {
     "text": ":ocean: *Flow*",
     "attachments": [{
+      "callback_id": "returned_flow_action",
       "color": "#26A671",
       "pretext": "Here's what you were doing:",
       "author_name": ":mag: Researching\n",
       "title": "{}",
       "text": ":spiral_note_pad: *Your notes*\n ```{}```",
       "fields": [{
-        "title": ":mag_right: Your files & locations",
-        "value": "```{}```",
+        "title": ":mag_right: Your sites",
+        "value": "{}",
         "short": false
+      }],
+      "actions": [{
+        "name": "finished",
+        "text": "Mark as done!",
+        "type": "button",
+        "style": "primary",
+        "value": "finished"
+      }, {
+        "name": "save",
+        "text": "Save for later!",
+        "type": "button",
+        "value": "save"
       }],
       "footer": "NovuNote",
       "footer_icon": "{}",

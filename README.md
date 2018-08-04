@@ -15,25 +15,25 @@ Visit the site at: www.novunote.com
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ------------------
-#### DEVELOPMENT
-in /frontend
-```
-yarn run
-```
-in root
-```
-python manage.py runserver
-```
+#### DEVELOPMENT - Bot
+1. run command `pipenv shell`
+1. run command `./manage.py runserver`
+1. run command in another terminal `ngrok http 8000`
+1. note doen the https URL it supplies you
+1. update api.slack *event subscriptions* and *interactive components* with URL
 
+#### DEVELOPMENT - Frontend
+1. cd into /frontend
+1. run command `pipenv shell`
+1. run command `npm run`
+    * for tests: `npm test`
 --------------
 #### PRODUCTION
-in /frontend
 ```
-yarn build
-```
-in root
-```
-python manage.py runserver --settings=neuro.production_settings
+$ yarn build
+$ python manage.py collectstatic --setting=neuro.production_settings
+$ git commit
+$ git push
 ```
 
 ### Prerequisites

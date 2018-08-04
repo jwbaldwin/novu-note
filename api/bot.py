@@ -107,7 +107,6 @@ class Bot(object):
     # Construct the attachments using information from DB
     def formatFlowJson(self, bot_attachments, flowStateData):
         # deconstruct into variables
-        print(flowStateData.date_created)
         attachments, attachment_field_value = self.deconstructJsonAttachments(bot_attachments)
 
         attachments["title"] = attachments["title"].format(flowStateData.short_desc)
@@ -116,9 +115,8 @@ class Bot(object):
         attachments["ts"] = attachments["ts"].format(flowStateData.date_created.timestamp())
 
         if(flowStateData.state_type == "researching"):
-            # For include the article url in top for unfurling
-            # TODO: add this in
-            pass
+            # include the article url in top for unfurling
+            attachment_field_value = attachment_field_value.format(flowStateData.resource_info)
         else:
             attachment_field_value = attachment_field_value.format(flowStateData.location_info)
 
