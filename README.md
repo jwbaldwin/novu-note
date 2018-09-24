@@ -17,10 +17,11 @@ These instructions will get you a copy of the project up and running on your loc
 ------------------
 #### DEVELOPMENT - Bot
 1. run command `pipenv shell`
-1. run command `./manage.py runserver`
 1. run command in another terminal `ngrok http 8000`
 1. note doen the https URL it supplies you
 1. update api.slack *event subscriptions* and *interactive components* with URL
+1. run command `./manage.py runserver`
+    * for tests: `./managepy test`
 
 #### DEVELOPMENT - Frontend
 1. cd into /frontend
@@ -30,13 +31,13 @@ These instructions will get you a copy of the project up and running on your loc
 --------------
 #### PRODUCTION
 ```
-$ yarn build
+$ cd frontend && yarn build
 $ python manage.py collectstatic --setting=neuro.production_settings
 $ git commit
 $ git push
 ```
 
-### Prerequisites
+### Project Built With
 
 Python 3.6.5
 Django 2.0.5
@@ -44,6 +45,7 @@ PostgreSQL
 TensorFlow
 Keras
 HerokuCli
+React && Redux
 
 ```
 $ brew install < >
